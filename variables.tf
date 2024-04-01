@@ -54,7 +54,7 @@ variable "redis_read_endpoints" {
 
 variable "waypoint_application" {
   type        = string
-  description = "Name of the Waypoint application."
+  description = "Name of the Waypoint application or no-code module workspace."
 
   validation {
     condition     = !contains(["-", "_"], var.waypoint_application)
