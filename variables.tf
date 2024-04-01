@@ -26,7 +26,7 @@ variable "deployment_regions" {
   default     = ["us-west1", "us-east1"]
 }
 
-variable "service_account_email" {
+variable "app_service_account_email" {
   description = "Email of the GCP service account with permissions from the services and core projects."
   type        = string
 }

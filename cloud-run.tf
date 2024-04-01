@@ -44,7 +44,7 @@ resource "google_cloud_run_v2_service" "default" {
       egress    = "ALL_TRAFFIC"
     }
 
-    service_account = var.service_account_email
+    service_account = var.app_service_account_email
   }
 }
 

@@ -21,5 +21,5 @@ resource "google_artifact_registry_repository_iam_member" "service_writer" {
   location   = var.default_region
   repository = google_artifact_registry_repository.application.name
   role       = "roles/artifactregistry.writer"
-  member     = "serviceAccount:${var.service_account_email}"
+  member     = "serviceAccount:${var.app_service_account_email}"
 }
