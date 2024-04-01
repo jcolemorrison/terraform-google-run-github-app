@@ -11,7 +11,7 @@ resource "google_artifact_registry_repository_iam_member" "github_writer" {
   project    = var.gcp_project_id
   location   = var.default_region
   repository = google_artifact_registry_repository.application.name
-  role       = "roles/artifactregistry.admin"
+  role       = "roles/artifactregistry.writer"
   member     = "serviceAccount:${google_service_account.github_actions.email}"
 }
 
@@ -20,6 +20,6 @@ resource "google_artifact_registry_repository_iam_member" "service_writer" {
   project    = var.gcp_project_id
   location   = var.default_region
   repository = google_artifact_registry_repository.application.name
-  role       = "roles/artifactregistry.admin"
+  role       = "roles/artifactregistry.writer"
   member     = "serviceAccount:${var.app_service_account_email}"
 }
