@@ -61,7 +61,7 @@ resource "google_compute_region_network_endpoint_group" "default_serverless_endp
 
 # Create a backend service
 resource "google_compute_backend_service" "default_service" {
-  name                  = "default-service"
+  name                  = "${var.waypoint_application}"
   protocol              = "HTTPS"
   enable_cdn            = false
   load_balancing_scheme = "EXTERNAL_MANAGED"
