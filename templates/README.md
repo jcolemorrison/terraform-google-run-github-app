@@ -2,4 +2,4 @@
 
 The Google Cloud Platform facing cloud infrastructure demo code for the Google Next '24 talk "Scaling Infrastructure as Code: Proven Strategies and Productive Workflows".  
 
-This is the repo is for the ${application_name} service
+This is the repo is for the ${application_name} service.  By default it uses a Node.js application that has the permissions and roles to connect to the Game services' datastore on a read level.
