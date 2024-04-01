@@ -1,17 +1,20 @@
 variable "tfc_organization" {
   description = "Terraform Cloud Organization name"
   type        = string
+  default     = ""
 }
 
 variable "tfc_api_token" {
   description = "Terraform Cloud API token for github actions"
   type        = string
   sensitive   = true
+  default     = ""
 }
 
 variable "gcp_project_id" {
   description = "The ID of the GCP project"
   type        = string
+  default     = ""
 }
 
 variable "default_region" {
@@ -29,27 +32,32 @@ variable "deployment_regions" {
 variable "app_service_account_email" {
   description = "Email of the GCP service account with permissions from the services and core projects."
   type        = string
+  default     = ""
 }
 
 variable "github_token" {
   description = "Valid access token for Github with public_repo and delete_repo permissions"
   type        = string
   sensitive   = true
+  default     = ""
 }
 
 variable "github_template_owner" {
   description = "The name of the owner ororganization in Github that will contain the template repo."
   type        = string
+  default     = ""
 }
 
 variable "github_template_repo" {
   description = "The name of the repository in Github that contains the template repo."
   type        = string
+  default     = ""
 }
 
 variable "redis_read_endpoints" {
   description = "The list of Redis read endpoints."
   type        = map(string)
+  default     = {}
 }
 
 variable "waypoint_application" {
@@ -83,4 +91,5 @@ variable "application_image_env_variables" {
 variable "regional_vpc_connector_ids" {
   description = "A map of regional VPC connector IDs."
   type        = map(string)
+  default     = {}
 }
