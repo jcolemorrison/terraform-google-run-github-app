@@ -32,8 +32,8 @@ run "artifact_registry_repository_iam_member" {
   }
 
   assert {
-    condition     = google_artifact_registry_repository_iam_member.github_writer.repository == google_artifact_registry_repository.application.name
-    error_message = "incorrect repository"
+    condition     = google_artifact_registry_repository_iam_member.github_writer.repository == google_artifact_registry_repository.application.id
+    error_message = "incorrect repository id"
   }
 
   assert {
@@ -59,8 +59,8 @@ run "artifact_registry_repository_iam_member_service_writer" {
   }
 
   assert {
-    condition     = google_artifact_registry_repository_iam_member.service_writer.repository == google_artifact_registry_repository.application.name
-    error_message = "incorrect repository"
+    condition     = google_artifact_registry_repository_iam_member.service_writer.repository == google_artifact_registry_repository.application.id
+    error_message = "incorrect repository id"
   }
 
   assert {

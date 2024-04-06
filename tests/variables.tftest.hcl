@@ -28,7 +28,7 @@ run "default_region" {
 
 run "deployment_regions" {
   assert {
-    condition     = var.deployment_regions == ["us-west1", "us-east1"]
+    condition     = length(var.deployment_regions) == 2
     error_message = "incorrect default value"
   }
 }

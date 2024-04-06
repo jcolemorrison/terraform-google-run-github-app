@@ -22,17 +22,17 @@ run "github_repository" {
   }
 
   assert {
-    condition     = github_repository.application.template.owner == var.github_template_owner
+    condition     = github_repository.application.template[0].owner == var.github_template_owner
     error_message = "incorrect template owner"
   }
 
   assert {
-    condition     = github_repository.application.template.repository == var.github_template_repo
+    condition     = github_repository.application.template[0].repository == var.github_template_repo
     error_message = "incorrect template repository"
   }
 
   assert {
-    condition     = github_repository.application.template.include_all_branches == false
+    condition     = github_repository.application.template[0].include_all_branches == false
     error_message = "incorrect template include_all_branches"
   }
 }
