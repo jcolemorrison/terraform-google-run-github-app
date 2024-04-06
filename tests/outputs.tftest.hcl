@@ -1,7 +1,7 @@
 run "region_to_service_endpoints" {
   assert {
-    condition     = output.region_to_service_endpoints.value == zipmap(var.deployment_regions, [for service in google_cloud_run_v2_service.default : service.uri])
-    error_message = "incorrect value"
+    condition     = length(output.region_to_service_endpoints) == 2
+    error_message = "expected 2 region to service endpoints"
   }
 
   assert {

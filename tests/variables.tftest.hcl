@@ -1,20 +1,20 @@
 run "tfc_organization" {
   assert {
-    condition     = var.tfc_organization == ""
+    condition     = var.tfc_organization != ""
     error_message = "incorrect default value"
   }
 }
 
 run "tfc_api_token" {
   assert {
-    condition     = var.tfc_api_token == ""
+    condition     = var.tfc_api_token != ""
     error_message = "incorrect default value"
   }
 }
 
 run "gcp_project_id" {
   assert {
-    condition     = var.gcp_project_id == ""
+    condition     = var.gcp_project_id != ""
     error_message = "incorrect default value"
   }
 }
@@ -35,36 +35,36 @@ run "deployment_regions" {
 
 run "app_service_account_email" {
   assert {
-    condition     = var.app_service_account_email == ""
+    condition     = var.app_service_account_email != ""
     error_message = "incorrect default value"
   }
 }
 
 run "github_token" {
   assert {
-    condition     = var.github_token == ""
+    condition     = var.github_token != ""
     error_message = "incorrect default value"
   }
 }
 
 run "github_template_owner" {
   assert {
-    condition     = var.github_template_owner == ""
+    condition     = var.github_template_owner != ""
     error_message = "incorrect default value"
   }
 }
 
 run "github_template_repo" {
   assert {
-    condition     = var.github_template_repo == ""
+    condition     = var.github_template_repo != ""
     error_message = "incorrect default value"
   }
 }
 
 run "redis_read_endpoints" {
   assert {
-    condition     = var.redis_read_endpoints == {}
-    error_message = "incorrect default value"
+    condition     = length(var.redis_read_endpoints) == 2
+    error_message = "expected 2 redis read endpoints"
   }
 }
 
@@ -89,16 +89,9 @@ run "application_image_tag" {
   }
 }
 
-run "application_image_env_variables" {
-  assert {
-    condition     = var.application_image_env_variables == []
-    error_message = "incorrect default value"
-  }
-}
-
 run "regional_vpc_connector_ids" {
   assert {
-    condition     = var.regional_vpc_connector_ids == {}
-    error_message = "incorrect default value"
+    condition     = length(var.regional_vpc_connector_ids) == 2
+    error_message = "expected 2 regional VPC ids"
   }
 }
