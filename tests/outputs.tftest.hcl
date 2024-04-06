@@ -7,7 +7,7 @@ run "region_to_service_endpoints" {
 
 run "github_repository_url" {
   assert {
-    condition     = output.github_repository_url.value == github_repository.application.html_url
+    condition     = output.github_repository_url == github_repository.application.html_url
     error_message = "incorrect value"
   }
 }
